@@ -8,6 +8,14 @@ Just run `sbt "run server server.conf"` or use `run_api.sh` script, which does e
 
 # Deploying to heroku
 
+Assuming you've got Heroku tools installed and the repo cloned:
+
+    # In repo's directory:
+    heroku create
+    git push heroku master
+
+Et voila!
+
 `Procfile` was prepared to use the port that is provided by Heroku through PORT env variable. 
 It makes use of sbt-native packager, to avoid SBT's memory footprint. 
 
