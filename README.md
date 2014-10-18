@@ -25,7 +25,7 @@ You can test the `Procfile` installing [foreman](https://rubygems.org/gems/forem
 
 # Deployed example
 
-Visit [http://secure-hamlet-8382.herokuapp.com]() to see a working sample
+Visit [http://secure-hamlet-8382.herokuapp.com](http://secure-hamlet-8382.herokuapp.com) to see a working sample
 
 # Interesting bits
 
