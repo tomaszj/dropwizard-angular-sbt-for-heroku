@@ -42,6 +42,8 @@ Servlet filter is used, as Dropwizard uses a separate servlet to handle static f
 
 `system.properties` file is used by Heroku to install correct Java runtime version. In this case it's Java 8.
 
+SBT is building one jar, thanks to sbt-assembly plugin.
+
 # License
 
 Standard MIT.
