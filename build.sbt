@@ -1,6 +1,5 @@
 import NativePackagerKeys._
-
-packageArchetype.java_application
+import AssemblyKeys._
 
 name := "test-api"
 
@@ -15,4 +14,23 @@ libraryDependencies += "io.dropwizard" % "dropwizard-assets" % "0.7.1"
   stage in Compile := {}
 }
 
+// Indicates which class' main() method is going to be used by default.
 mainClass in Compile := Some("org.tomaszjaneczko.testpoc.api.TestAPIApplication")
+
+// Using java_server archetype from sbt-native-packager.
+packageArchetype.java_server
+
+// Adding assemblySettings to activate sbt-assembly.
+assemblySettings
+
+// Final jar name.
+jarName in assembly := "test-api.jar"
+
+// removes all jar mappings in universal and appends the fat jar
+mappings in Universal <<= (mappings in Universal, assembly in Compile) map { (mappings, fatJar) =>
+    val filtered = mappings filter { case (file, name) =>  ! name.endsWith(".jar") }
+    filtered :+ (fatJar -> ("lib/" + fatJar.getName))
+}
+
+// the bash scripts classpath only needs the fat jar
+scriptClasspath := Seq( (jarName in assembly).value )
