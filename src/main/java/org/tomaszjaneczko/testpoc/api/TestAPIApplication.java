@@ -30,7 +30,6 @@ public class TestAPIApplication extends Application<TestAPIConfiguration> {
 
     @Override
     public void run(TestAPIConfiguration configuration, Environment environment) {
-        environment.jersey().setUrlPattern("/api/*");
         environment.jersey().register(new BusinessesResource());
 
         final FilterRegistration.Dynamic filterBuilder
