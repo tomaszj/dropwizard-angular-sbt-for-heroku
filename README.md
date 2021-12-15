@@ -23,10 +23,6 @@ You can test the `Procfile` installing [foreman](https://rubygems.org/gems/forem
 
     foreman start  
 
-# Deployed example
-
-Visit [http://secure-hamlet-8382.herokuapp.com](http://secure-hamlet-8382.herokuapp.com) to see a working sample
-
 # Interesting bits
 
 All static assets are served from src/main/resources/static folder through Dropwizard's AssetsBundle servlet.
